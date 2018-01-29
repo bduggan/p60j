@@ -18,15 +18,11 @@ RUN /sbin/ldconfig
 
 USER $NB_USER
 
-ENV PATH $HOME/.perl6/bin:/usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:$PATH
+ENV PATH="${HOME}/.perl6/bin:/usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:${PATH}"
 
 RUN install-zef-as-user
 
 RUN git clone https://github.com/bduggan/p6-jupyter-kernel.git && cd p6-jupyter-kernel && zef install .
-
-ENV PATH $HOME/.perl6/bin:/usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:$PATH
-
-RUN echo $PATH
 
 RUN jupyter-kernel.p6 --generate-config
 
