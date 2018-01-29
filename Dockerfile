@@ -10,13 +10,13 @@ RUN wget https://github.com/nxadm/rakudo-pkg/releases/download/v2018.01/rakudo-p
 
 RUN dpkg -i *.deb
 
+RUN wget https://github.com/zeromq/libzmq/releases/download/v4.2.2/zeromq-4.2.2.tar.gz && \
+        tar -xzvf zeromq-4.2.2.tar.gz && \
+        cd zeromq-4.2.2 && ./configure --prefix=/usr && make && make install && cd ..
+
 USER $NB_USER
 
 ENV PATH /usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:~/.perl6/bin:$PATH
-
-RUN  wget https://github.com/zeromq/libzmq/releases/download/v4.2.2/zeromq-4.2.2.tar.gz && \
-        tar -xzvf zeromq-4.2.2.tar.gz && \
-        cd zeromq-4.2.2 && ./configure --prefix=/usr && make && make install && cd ..
 
 RUN /sbin/ldconfig
 
