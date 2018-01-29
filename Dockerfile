@@ -18,7 +18,7 @@ RUN /sbin/ldconfig
 
 USER $NB_USER
 
-ENV PATH /usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:~/.perl6/bin:$PATH
+ENV PATH /usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:/home/joyvan/.perl6/bin:$PATH
 
 RUN install-zef-as-user
 
