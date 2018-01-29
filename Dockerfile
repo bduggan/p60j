@@ -14,11 +14,11 @@ RUN wget https://github.com/zeromq/libzmq/releases/download/v4.2.2/zeromq-4.2.2.
         tar -xzvf zeromq-4.2.2.tar.gz && \
         cd zeromq-4.2.2 && ./configure --prefix=/usr && make && make install && cd ..
 
+RUN /sbin/ldconfig
+
 USER $NB_USER
 
 ENV PATH /usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:~/.perl6/bin:$PATH
-
-RUN /sbin/ldconfig
 
 RUN install-zef-as-user
 
