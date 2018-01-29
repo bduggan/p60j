@@ -6,7 +6,7 @@ RUN apt-get update
 
 RUN apt-get install -y build-essential
 
-RUN apt-get install wget
+RUN apt-get install wget git
 
 RUN wget https://github.com/nxadm/rakudo-pkg/releases/download/v2018.01/rakudo-pkg-Ubuntu17.10_2018.01-01_amd64.deb
 
