@@ -30,4 +30,4 @@ RUN git clone https://github.com/bduggan/p60j
 
 RUN cd p60j && virtualenv venv && . ./venv/bin/activate
 
-RUN cd p60j && pip install -r requirements.txt
+RUN cd p60j && pip2 install -r requirements.txt
