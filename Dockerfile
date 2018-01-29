@@ -16,7 +16,7 @@ ENV PATH /usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:~/.perl6/bin:$PATH
 
 RUN  wget https://github.com/zeromq/libzmq/releases/download/v4.2.2/zeromq-4.2.2.tar.gz && \
         tar -xzvf zeromq-4.2.2.tar.gz && \
-        pushd zeromq-4.2.2 && ./configure --prefix=/usr && make && sudo make install && popd
+        cd zeromq-4.2.2 && ./configure --prefix=/usr && make && sudo make install && cd ..
 
 RUN /sbin/ldconfig
 
