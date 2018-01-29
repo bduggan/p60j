@@ -26,7 +26,7 @@ RUN git clone https://github.com/bduggan/p6-jupyter-kernel.git && cd p6-jupyter-
 
 RUN jupyter-kernel.p6 --generate-config
 
-RUN git clone https://github.com/bduggan/p60j
+RUN git  clone https://github.com/bduggan/p60j
 
 RUN cd p60j && virtualenv venv && . ./venv/bin/activate
 
