@@ -14,6 +14,12 @@ USER $NB_USER
 
 ENV PATH /usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:~/.perl6/bin:$PATH
 
+RUN  wget https://github.com/zeromq/libzmq/releases/download/v4.2.2/zeromq-4.2.2.tar.gz && \
+        tar -xzvf zeromq-4.2.2.tar.gz && \
+        pushd zeromq-4.2.2 && ./configure --prefix=/usr && make && sudo make install && popd
+
+RUN /sbin/ldconfig
+
 RUN install-zef-as-user
 
 RUN git clone https://github.com/bduggan/p6-jupyter-kernel.git && cd p6-jupyter-kernel && zef install .
