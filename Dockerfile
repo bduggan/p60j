@@ -18,7 +18,9 @@ ENV PATH /usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:~/.perl6/bin:$PATH
 
 RUN install-zef-as-user
 
-RUN zef -v install https://github.com/bduggan/p6-jupyter-kernel.git@0.0.7 && jupyter-kernel.p6 --generate-config
+RUN git clone https://github.com/bduggan/p6-jupyter-kernel.git && cd p6-jupyter-kernel && zef install .
+
+RUN jupyter-kernel.p6 --generate-config
 
 RUN git clone https://github.com/bduggan/p60j && cd p60j && pip install -r requirements.txt
 
