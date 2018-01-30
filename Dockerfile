@@ -6,8 +6,6 @@ RUN apt-get update
 
 RUN apt-get install -y build-essential wget git python python-pip virtualenv
 
-RUN pip install --upgrade pip
-
 RUN wget https://github.com/nxadm/rakudo-pkg/releases/download/v2018.01/rakudo-pkg-Ubuntu17.10_2018.01-01_amd64.deb
 
 RUN dpkg -i *.deb
@@ -28,7 +26,7 @@ RUN git clone https://github.com/bduggan/p6-jupyter-kernel.git && cd p6-jupyter-
 
 RUN jupyter-kernel.p6 --generate-config
 
-RUN git  clone https://github.com/bduggan/p60j
+RUN git clone https://github.com/bduggan/p60j
 
 RUN cd p60j && virtualenv venv && . ./venv/bin/activate && pip install --upgrade pip
 
