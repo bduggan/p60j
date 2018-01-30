@@ -34,5 +34,5 @@ RUN git clone https://github.com/bduggan/p60j
 
 
 RUN cd p60j && python2.7 -m pip install -r requirements.txt  \
-        && jupyter-nbextension install rise --py --sys-prefix \
+        &&  jupyter-nbextension install rise --py --sys-prefix \
         && jupyter-nbextension enable rise --py --sys-prefix
