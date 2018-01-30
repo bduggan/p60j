@@ -30,11 +30,11 @@ RUN jupyter-kernel.p6 --generate-config
 
 RUN git  clone https://github.com/bduggan/p60j
 
-RUN cd p60j && virtualenv venv && . ./venv/bin/activate
+RUN cd p60j && virtualenv venv && . ./venv/bin/activate && pip install --upgrade pip
 
-RUN cd p60j  && pip2 install -r requirements.txt
+RUN cd p60j && pip install -r requirements.txt
 
-RUN cd p60j && pip2 install RISE && \
+RUN cd p60j && pip install RISE && \
    jupyter-nbextension install RISE --py --sys-prefix \
    && jupyter-nbextension enable RISE --py --sys-prefix
 
