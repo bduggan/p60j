@@ -30,7 +30,9 @@ RUN git clone https://github.com/bduggan/p6-jupyter-kernel.git && cd p6-jupyter-
 
 RUN jupyter-kernel.p6 --generate-config
 
-RUN git  clone https://github.com/bduggan/p60j
+RUN date > build-date
+
+RUN git clone https://github.com/bduggan/p60j
 
 RUN cd p60j && python2.7 -m pip install -r requirements.txt  \
         && pip install RISE \
