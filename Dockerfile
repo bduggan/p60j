@@ -18,6 +18,8 @@ RUN wget https://github.com/zeromq/libzmq/releases/download/v4.2.2/zeromq-4.2.2.
 
 RUN /sbin/ldconfig
 
+RUN chown -R $NB_USER /usr/local
+
 USER $NB_USER
 
 ENV PATH="${HOME}/.perl6/bin:/usr/share/perl6/site/bin:/opt/rakudo-pkg/bin:${PATH}"
@@ -30,7 +32,6 @@ RUN jupyter-kernel.p6 --generate-config
 
 RUN git clone https://github.com/bduggan/p60j
 
-RUN chown -R $NB_USER /usr/local
 
 RUN cd p60j && python2.7 -m pip install -r requirements.txt  \
         && jupyter-nbextension install rise --py --sys-prefix \
