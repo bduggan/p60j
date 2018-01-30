@@ -1,0 +1,34 @@
+.rise-enabled .reveal .slides {
+    font-size: 120%;
+}
+
+.rise-enabled .text_cell {
+    font-size: 140%;
+}
+
+.rise-enabled .text_cell.rendered .rendered_html {
+    overflow-x: hidden;
+}
+
+.rendered_html p {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.rendered_html table tr td {
+    font-size: 140%;
+}
+
+.text_cell.rendered.rendered_html {
+    overflow-x: hidden;
+}
+
+.MathJax_Display {
+    overflow-y: hidden;
+}
+
+.rise-enabled .reveal .slide-number {
+    right: 8px;
+    bottom: 8px;
+}
+
