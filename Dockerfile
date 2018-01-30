@@ -28,6 +28,8 @@ RUN install-zef-as-user
 
 RUN git clone https://github.com/bduggan/p6-jupyter-kernel.git && cd p6-jupyter-kernel && zef install --/test .
 
+RUN zef install JSON::Fast
+
 RUN jupyter-kernel.p6 --generate-config
 
 RUN date > build-date
