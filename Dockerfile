@@ -6,6 +6,8 @@ RUN apt-get update
 
 RUN apt-get install -y build-essential wget git python python-pip virtualenv
 
+RUN pip install --upgrade pip
+
 RUN wget https://github.com/nxadm/rakudo-pkg/releases/download/v2018.01/rakudo-pkg-Ubuntu17.10_2018.01-01_amd64.deb
 
 RUN dpkg -i *.deb
