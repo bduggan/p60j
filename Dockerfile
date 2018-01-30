@@ -33,6 +33,6 @@ RUN git clone https://github.com/bduggan/p60j
 RUN cd p60j && virtualenv venv && . ./venv/bin/activate && pip install --upgrade pip \
 	&& pip install -r requirements.txt \
 	&& pip install RISE \
-        && jupyter-nbextension install RISE --py --sys-prefix \
-        && jupyter-nbextension enable RISE --py --sys-prefix
+        && jupyter-nbextension install rise --py --sys-prefix \
+        && jupyter-nbextension enable rise --py --sys-prefix
 
