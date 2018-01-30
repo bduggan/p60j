@@ -32,5 +32,7 @@ RUN cd p60j && virtualenv venv && . ./venv/bin/activate
 
 RUN cd p60j  && pip2 install -r requirements.txt
 
-RUN cd p60j && jupyter-nbextension install rise --py --sys-prefix && jupyter-nbextension enable rise --py --sys-prefix
+RUN cd p60j && pip2 install RISE && \
+   jupyter-nbextension install RISE --py --sys-prefix \
+   && jupyter-nbextension enable RISE --py --sys-prefix
 
